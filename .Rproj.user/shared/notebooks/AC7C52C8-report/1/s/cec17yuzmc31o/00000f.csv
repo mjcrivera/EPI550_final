@@ -1,0 +1,3 @@
+"0","df_clean <- harvard |>"
+"0","  janitor::clean_names() |>"
+"0","  drop_na(iief)"

@@ -1,0 +1,7 @@
+"0","ggplot(df_clean, aes(x = iief)) +"
+"0","  geom_histogram(binwidth = 1, fill = ""steelblue"", color = ""white"") +"
+"0","  labs("
+"0","  title = ""Distribution of Erectile Dysfunction (IIEF-5 Scores)"","
+"0","  x = ""IIEF-5 Score"","
+"0","  y = ""Number of Patients"""
+"0","  )"

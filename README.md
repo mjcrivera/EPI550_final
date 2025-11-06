@@ -1,0 +1,24 @@
+# Code Description
+
+`code/01_make_output1.R`
+- reads harvard (raw dataset)
+- cleans harvard to df_clean (clean dataset)
+- generates summary statistics in `output1/` folder
+
+`code/02_make_output2.R`
+- produces histogram in `output2/` folder
+
+`report.Rmd`
+- loads the table and figure saved by the two `.R` scripts
+
+## Code for creating Table 1 is in code/01_make_output.R
+## Code for creating Figure 1 is in code/02_make_output2
+
+### Confirm code base is stable and generate the final report
+- download and unzip the project
+- confirm that you can build the report by executing `make`
+- if the report does not build, correct code until it builds correctly
+- the `main` branch of the GitHub repo is the "stable" version of the code
+- make sure that the local `main` branch is up to date with the remote `main` branch
+
+#### Push access to EPI550_finalproject repo on GitHub
