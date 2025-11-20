@@ -10,3 +10,7 @@ output2/random_numbers2.rds: code/02_make_output2.R
 .PHONY: clean
 clean:
 	rm -f output/*.rds && rm -f report.html
+	
+.PHONY: install
+install:
+Rscript -e "renv::restore(prompt = FALSE)"
