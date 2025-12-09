@@ -20,4 +20,4 @@ install:
 
 docker-run:
 	mkdir -p report
-	docker run --rm -v "${PWD}/report":/home/rstudio/EPI550_final/report final4 bash -c "Rscript code/00_clean_data.R && Rscript code/01_make_table.R && Rscript code/02_make_figure.R && Rscript code/03_render_report.R"
+	docker run --rm -v "$$(pwd)/report":/home/rstudio/EPI550_final/report mjcrivera/final4 bash -c "Rscript code/00_clean_data.R && Rscript code/01_make_table.R && Rscript code/02_make_figure.R && Rscript code/03_render_report.R"

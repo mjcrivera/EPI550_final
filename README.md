@@ -1,43 +1,55 @@
-DATA 550: Data Science Toolkit
+*DATA 550: Data Science Toolkit
 Fall 2025
-Final Project
+Final Project*
 
 # Priapism and Erectile Dysfunction
-** by Monica Rivera **
-** December 11, 2025 **
----
+by Monica Rivera
+December 11, 2025
+
 ## Overview
-The Replication Data for Erectile dysfunction and psychosocial outcomes following priapism treatment: 
-A retrospective study from the Harvard Dataverse (https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/PVH4QS). 
-My final report presents a table of the descriptive statistics and a histogram figure of the 
-distribution of erectile dysfunction severity, measured using the International Index of Erectile 
-Function (IIEF-5) among the participants.
+The __Replication Data for Erectile dysfunction and psychosocial outcomes following priapism treatment: A retrospective study__ from the Harvard Dataverse (https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/PVH4QS). My final report presents a table of the descriptive statistics and a histogram figure of the distribution of erectile dysfunction severity, measured using the International Index of Erectile Function (IIEF-5) among the participants.
 
 ### Contents of the Report 
-- ** Table 1: ** Summary Statistics of Study Participants
-- ** Figure 1: ** Distribution of Erectile Dysfunction (IIEF-5 Scores)
+* __Table 1:__ Summary Statistics of Study Participants
+* __Figure 1:__ Distribution of Erectile Dysfunction (IIEF-5 Scores)
+
 ---
+
 ## Docker
 - Open Docker Desktop and log-in on your Docker account.
+
 ---
+
 ## EPI550_final repository
 - Fork and clone `https://github.com/mjcrivera/EPI550_final`.
+
 ---
+
 ## Final Project.Rproj
 - Open terminal and use `cd` to navigate to `EPI550_final` directory, if not already.
+
 ---
+
 ## Building the Docker Image
 - Execute `docker build -t final4 .`
+
 ---
+
 ## Make report
 - Execute `make docker-run`.
+
 ---
+
 ## Synchronize package repository
 - Execute `make install`.
+
 ---
+
 ## Make report.html
 - Execute `make`.
+
 ---
+
 ## Code description
 
 `code/00_clean_data.R`
