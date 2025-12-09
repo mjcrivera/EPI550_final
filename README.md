@@ -31,22 +31,13 @@ The __Replication Data for Erectile dysfunction and psychosocial outcomes follow
 ---
 
 ## Building the Docker Image
-- Execute `docker build -t final4 .`
+- Execute `docker build -t final4 .` in the terminal.
 
 ---
 
 ## Make report
-- Execute `make docker-run`.
-
----
-
-## Synchronize package repository
-- Execute `make install`.
-
----
-
-## Make report.html
-- Execute `make`.
+- Then execute `make docker-run` in the terminal.
+- See `report.html` in report folder located at local project folder.
 
 ---
 
@@ -81,3 +72,8 @@ The __Replication Data for Erectile dysfunction and psychosocial outcomes follow
 
   - Contains rules for building the report
   - Execute `make` to generate a `report.html`
+  
+`Dockerfile`
+
+  - Sets of instructions to build a Docker image via DockerHub
+  - Saves `report.Rmd` to an `.html` object into local `report` folder
