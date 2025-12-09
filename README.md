@@ -28,7 +28,7 @@ Function (IIEF-5) among the participants.
 - Open terminal and use `cd` to navigate to `EPI550_final` directory, if not already.
 ---
 ## Building the Docker Image
-- Execute `docker build -t <image_tag4> .`
+- Execute `docker build -t final3.`
 ---
 ## Code description
 
