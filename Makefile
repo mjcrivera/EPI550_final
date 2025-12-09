@@ -1,4 +1,4 @@
-report.html: code/03_render_report.R report.Rmd data/clean_data.rds table/table_one.rds figure/histogram.png
+report/report.html: code/03_render_report.R report.Rmd data/clean_data.rds table/table_one.rds figure/histogram.png
 	Rscript code/03_render_report.R
 
 data/clean_data.rds: code/00_clean_data.R data/Priapism\ ED\ Outcomes.csv
@@ -12,7 +12,7 @@ figure/histogram.png: code/02_make_figure.R
 
 .PHONY: clean
 clean:
-	rm -f data/*.rds && rm -f table/*.rds && rm -f figure/*.png && rm -f report.html
+	rm -f data/*.rds && rm -f table/*.rds && rm -f figure/*.png && rm -f report/*.html
 	
 .PHONY: install 
 install:

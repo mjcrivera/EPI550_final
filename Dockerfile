@@ -1,6 +1,6 @@
 FROM rocker/tidyverse:4.5.1 AS base
 
-RUN mkdir /home/rstudio/EPI550_final
+RUN mkdir -p /home/rstudio/EPI550_final
 WORKDIR /home/rstudio/EPI550_final
 
 RUN mkdir -p renv
@@ -9,7 +9,7 @@ COPY .Rprofile .Rprofile
 COPY renv/activate.R renv/activate.R
 COPY renv/settings.json renv/settings.json
 
-RUN mkdir renv/.cache
+RUN mkdir -p renv/.cache
 ENV RENV_PATHS_CACHE=renv/.cache
 
 RUN Rscript -e "renv::restore(prompt = FALSE)"
@@ -18,17 +18,15 @@ RUN Rscript -e "renv::restore(prompt = FALSE)"
 
 FROM rocker/tidyverse:4.5.1
 
-RUN mkdir /home/rstudio/EPI550_final
-
+RUN mkdir -p /home/rstudio/EPI550_final
 WORKDIR /home/rstudio/EPI550_final
+
 COPY --from=base /home/rstudio/EPI550_final .
 
-RUN mkdir code
-RUN mkdir figure
-RUN mkdir table
-RUN mkdir -p report
+RUN mkdir -p code figure table report data
 COPY Makefile .
 COPY report.Rmd .
-RUN mkdir data
 COPY data/ data/
-COPY code code
+
+COPY code/ code/
+CMD ["bash", "-c", "make report.html report"]

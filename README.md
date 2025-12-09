@@ -24,11 +24,19 @@ Function (IIEF-5) among the participants.
 - Fork and clone `https://github.com/mjcrivera/EPI550_final`.
 ---
 ## Final Project.Rproj
-- Select `Final Project.Rproj` in the `EPI550_final` directory.
 - Open terminal and use `cd` to navigate to `EPI550_final` directory, if not already.
 ---
 ## Building the Docker Image
-- Execute `docker build -t final3.`
+- Execute `docker build -t final4 .`
+---
+## Make report
+- Execute `make docker-run`.
+---
+## Synchronize package repository
+- Execute `make install`.
+---
+## Make report.html
+- Execute `make`.
 ---
 ## Code description
 
