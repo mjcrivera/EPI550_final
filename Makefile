@@ -1,16 +1,15 @@
-report.html: code/03_render_report.R report.Rmd
+report.html: code/03_render_report.R report.Rmd data/clean_data.rds table/table_one.rds figure/histogram.png
 	Rscript code/03_render_report.R
 
-output1/random_numbers1.rds: code/01_make_output1.R
-	Rscript code/01_make_output1.R
+data/clean_data.rds: code/00_clean_data.R data/Priapism\ ED\ Outcomes.csv
+	Rscript code/00_clean_data.R
+
+table/table_one.rds: code/01_make_table.R
+	Rscript code/01_make_table.R
 	
-output2/random_numbers2.rds: code/02_make_output2.R
-	Rscript code/02_make_output2.R
+figure/histogram.png: code/02_make_figure.R
+	Rscript code/02_make_figure.R
 
 .PHONY: clean
 clean:
-	rm -f output/*.rds && rm -f report.html
-	
-.PHONY: install
-install:
-Rscript -e "renv::restore(prompt = FALSE)"
+	rm -f data/*.rds && rm -f table/*.rds && rm -f figure/*.png && rm -f report.html

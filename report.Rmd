@@ -3,85 +3,57 @@ title: "Priapism and Erectile Dysfunction"
 author: "Monica Rivera"
 date: "`r format(Sys.Date(), '%m-%d-%Y')`"
 output: html_document
+params:
+  production: TRUE
 ---
 
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
-library(tidyverse)
-library(janitor)
-library(here)
-library(gtsummary)
+```{r, set-chunk-opts, echo = FALSE, eval = params$production}
 library(knitr)
-library(readxl)
-library(dplyr)
+library(here)
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE
+)
 ```
 
+```{r, load-data}
+here::i_am("report.Rmd")
+clean_data <- readRDS(
+  file = here::here("data/clean_data.rds")
+)
+```
 ## Introduction
 
-The "Erectile Dysfunction and Pyschosocial Outcomes Following Priapism Treatment: A Retrospective Study" was conducted at Korle Bu Teaching Hospital in Accra, Ghana. The data collected from this study includes anonymous information on male patients treated for priapism between October 30, 2015 to January 8, 2023.
+The **Erectile Dysfunction and Pyschosocial Outcomes Following Priapism Treatment: A Retrospective Study** was conducted at Korle Bu Teaching Hospital in Accra, Ghana. The data collected from this study includes anonymous information on male patients treated for priapism between October 30, 2015 to January 8, 2023.
 
 __Contents__:
 
-* Demographics - current age, age at priapism episode, sickle cell disease status
+* __Demographics__ - age, age at first priapism episode, sickle cell disease status
 
-* Clinical characteristics - etiology of priapism, treatment modalities, time to treatment
+* __Clinical characteristics__ - etiology of priapism, treatment modalities, time to treatment
 
-* Erectile dysfunction (ED) severity - measured through the International Index of Erectile Function (IIEF-5) score
+* __Erectile dysfunction (ED) severity__ - measured through the International Index of Erectile Function (IIEF-5) score
 
-* Psycho social outcomes - relational, psycho social, reproductive impacts
+* __Psycho social outcomes__ - relational, psycho social, reproductive impacts
 
 ## Analysis Objective
 
-Investigate the relationship between patient characteristics (age, age at first episode) and the severity of priapism episodes, using the IIEF-5 score as a measure of erectile function.
-
-```{r loading data}
-# Load from local spreadsheet
-harvard <- read_csv(here::here('/Users/mjcrivera/Desktop/Fall 2025/DATA 550/Final Project/Priapism ED Outcomes.csv')) 
-```
-
-```{r clean data}
-df_clean <- harvard |>
-  clean_names() |>
-  drop_na(iief)
-```
+Investigate the relationship between patient characteristics using the IIEF-5 score as a measure of erectile function.
 
 ## Descriptive Statistics
 
-```{r summary stats}
-#| label: tbl-one
-#| tbl-cap: "Descriptive Statistics for Age, Age at 1st Episode, Episodes, IIEF-5 score, and Severity of ED"
-tbl_summary(
-  df_clean,
-  include = c(age, age_first, episodes, iief, severity_ed),
-  label = list(
-    age ~ "Age (years)",
-    age_first ~ "Age at 1st Episode",
-    episodes ~ "Number of Priapism Episodes",
-    iief ~ "IIEF-5 Score",
-    severity_ed ~ "ED Severity"
-  ),
-  statistic = list(
-    all_continuous() ~ "{mean} ({sd})",
-    all_categorical() ~ "{n} ({p}%)"
-  ),
-  missing_text = "Missing"
-) %>%
-  add_overall() %>%
-  gtsummary::modify_caption("**Table 1. Summary Statistics of Study Participants**")
+```{r, table}
+table_one <- readRDS(
+  file = here::here("table/table_one.rds")
+)
+table_one
 ```
 
-Table 1 shows the number of patients in the data set, the mean current age, the mean age at priapism episode, and the average IIEF-5 score.
+Table 1 shows the average age, age at first priapism episode, IIEF-5 score, number of episodes, and erectile dysfunction severity of the `r nrow (clean_data)`  patients.
 
 ## Data Visualization
 
-```{r histogram}
-ggplot(df_clean, aes(x = iief)) +
-  geom_histogram(binwidth = 1, fill = "steelblue", color = "white") +
-  labs(
-  title = "Figure 1. Distribution of Erectile Dysfunction (IIEF-5 Scores)",
-  x = "IIEF-5 Score",
-  y = "Number of Patients"
-  )
+```{r, figure}
+knitr::include_graphics(
+  here::here("figure/histogram.png"))
 ```
 
 Figure 1 illustrates the distribution of IIEF-5 scores in the cohort. Lower scores suggest more severe erectile dysfunction, while higher scores indicate better erectile function. This figure allows us to quickly assess how erectile function is distributed among the patients studied.
