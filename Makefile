@@ -13,3 +13,7 @@ figure/histogram.png: code/02_make_figure.R
 .PHONY: clean
 clean:
 	rm -f data/*.rds && rm -f table/*.rds && rm -f figure/*.png && rm -f report.html
+	
+.PHONY: install 
+install:
+	Rscript -e "renv::restore(prompt = FALSE)"
