@@ -11,7 +11,7 @@ The __Replication Data for Erectile dysfunction and psychosocial outcomes follow
 
 ### Contents of the Report 
 * __Table 1:__ Summary Statistics of Study Participants
-* __Figure 1:__ Distribution of Erectile Dysfunction (IIEF-5 Scores)
+* __Figure 1:__ Distribution of Erectile Dysfunction
 
 ---
 
@@ -25,19 +25,19 @@ The __Replication Data for Erectile dysfunction and psychosocial outcomes follow
 
 ---
 
-## Final Project.Rproj
-- Open terminal and use `cd` to navigate to `EPI550_final` directory, if not already.
+## Final Project.Rproj in EPI550_final
+- Open terminal in `Final Project.Rproj` and use `cd` to navigate to `EPI550_final` directory, if not already.
 
 ---
 
-## Building the Docker Image
+## Building the Docker Image: final4
 - Execute `docker build -t final4 .` in the terminal.
 
 ---
 
 ## Make report
-- Then execute `make docker-run` in the terminal.
-- See `report.html` in report folder located at local project folder.
+- Execute `make docker-run` in the terminal.
+- See `report.html` in `report` folder located at local project folder.
 
 ---
 
@@ -66,14 +66,22 @@ The __Replication Data for Erectile dysfunction and psychosocial outcomes follow
 `report.Rmd`
 
   - Loads each of the four `.R` scripts
-  - Makes 1 table and 1 figure 
+  - Makes 1 table, 1 figure, and 1 report
   
 `Makefile`
 
   - Contains rules for building the report
-  - Execute `make` to generate a `report.html`
+  - Execute `make` to generate `report.html`
   
 `Dockerfile`
 
-  - Sets of instructions to build a Docker image via DockerHub
-  - Saves `report.Rmd` to an `.html` object into local `report` folder
+  - Sets of instructions to build the Docker image via DockerHub
+  - Saves `report.Rmd` to an `.html` object into `report` folder located at local project folder
+  
+`final4`
+
+  - Docker image is called `final4` to build the container
+
+`Final Project.Rproj`
+
+  - RStudio project session to run code in
