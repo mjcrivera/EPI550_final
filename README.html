@@ -370,8 +370,7 @@ among the participants.</p>
 <ul>
 <li><strong>Table 1:</strong> Summary Statistics of Study
 Participants</li>
-<li><strong>Figure 1:</strong> Distribution of Erectile Dysfunction
-(IIEF-5 Scores)</li>
+<li><strong>Figure 1:</strong> Distribution of Erectile Dysfunction</li>
 </ul>
 <hr />
 </div>
@@ -391,16 +390,17 @@ Participants</li>
 </ul>
 <hr />
 </div>
-<div id="final-project.rproj" class="section level2">
-<h2>Final Project.Rproj</h2>
+<div id="final-project.rproj-in-epi550_final" class="section level2">
+<h2>Final Project.Rproj in EPI550_final</h2>
 <ul>
-<li>Open terminal and use <code>cd</code> to navigate to
-<code>EPI550_final</code> directory, if not already.</li>
+<li>Open terminal in <code>Final Project.Rproj</code> and use
+<code>cd</code> to navigate to <code>EPI550_final</code> directory, if
+not already.</li>
 </ul>
 <hr />
 </div>
-<div id="building-the-docker-image" class="section level2">
-<h2>Building the Docker Image</h2>
+<div id="building-the-docker-image-final4" class="section level2">
+<h2>Building the Docker Image: final4</h2>
 <ul>
 <li>Execute <code>docker build -t final4 .</code> in the terminal.</li>
 </ul>
@@ -409,9 +409,9 @@ Participants</li>
 <div id="make-report" class="section level2">
 <h2>Make report</h2>
 <ul>
-<li>Then execute <code>make docker-run</code> in the terminal.</li>
-<li>See <code>report.html</code> in report folder located at local
-project folder.</li>
+<li>Execute <code>make docker-run</code> in the terminal.</li>
+<li>See <code>report.html</code> in <code>report</code> folder located
+at local project folder.</li>
 </ul>
 <hr />
 </div>
@@ -423,19 +423,19 @@ project folder.</li>
 <code>raw_data</code></li>
 <li>Cleans the <code>raw_data</code> to <code>clean_data</code></li>
 <li>Saves <code>clean_data</code> to an <code>.rds</code> object in
-<code>data/</code> folder</li>
+<code>data</code> folder</li>
 </ul>
 <p><code>code/01_make_table.R</code></p>
 <ul>
 <li>Generates <code>table_one</code></li>
 <li>Saves <code>table_one</code> as an <code>.rds</code> object in
-<code>table/</code> folder</li>
+<code>table</code> folder</li>
 </ul>
 <p><code>code/02_make_figure.R</code></p>
 <ul>
 <li>Generates <code>histogram</code></li>
 <li>Saves <code>histogram</code> as a <code>.png</code> object in
-<code>figure/</code> folder</li>
+<code>figure</code> folder</li>
 </ul>
 <p><code>code/03_render_report.R</code></p>
 <ul>
@@ -444,19 +444,27 @@ project folder.</li>
 <p><code>report.Rmd</code></p>
 <ul>
 <li>Loads each of the four <code>.R</code> scripts</li>
-<li>Makes 1 table and 1 figure</li>
+<li>Makes 1 table, 1 figure, and 1 report</li>
 </ul>
 <p><code>Makefile</code></p>
 <ul>
 <li>Contains rules for building the report</li>
-<li>Execute <code>make</code> to generate a
-<code>report.html</code></li>
+<li>Execute <code>make</code> to generate <code>report.html</code></li>
 </ul>
 <p><code>Dockerfile</code></p>
 <ul>
-<li>Sets of instructions to build a Docker image via DockerHub</li>
+<li>Sets of instructions to build the Docker image via DockerHub</li>
 <li>Saves <code>report.Rmd</code> to an <code>.html</code> object into
-local <code>report</code> folder</li>
+<code>report</code> folder located at local project folder</li>
+</ul>
+<p><code>final4</code></p>
+<ul>
+<li>Docker image is called <code>final4</code> to build the
+container</li>
+</ul>
+<p><code>Final Project.Rproj</code></p>
+<ul>
+<li>RStudio project session to run code in</li>
 </ul>
 </div>
 </div>

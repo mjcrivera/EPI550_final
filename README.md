@@ -47,17 +47,17 @@ The __Replication Data for Erectile dysfunction and psychosocial outcomes follow
 
   - Loads and reads the `Prapism ED Outcomes.csv` to `raw_data`
   - Cleans the `raw_data` to `clean_data` 
-  - Saves `clean_data` to an `.rds` object in `data/` folder
+  - Saves `clean_data` to an `.rds` object in `data` folder
 
 `code/01_make_table.R`
 
   - Generates `table_one`
-  - Saves `table_one` as an `.rds` object in `table/` folder
+  - Saves `table_one` as an `.rds` object in `table` folder
   
 `code/02_make_figure.R`
 
   - Generates `histogram`
-  - Saves `histogram` as a `.png` object in `figure/` folder 
+  - Saves `histogram` as a `.png` object in `figure` folder 
 
 `code/03_render_report.R`
 
