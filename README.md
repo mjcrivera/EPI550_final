@@ -31,7 +31,7 @@ The __Replication Data for Erectile dysfunction and psychosocial outcomes follow
 ---
 
 ## Building the Docker Image: final4
-- Execute `docker build -t final4 .` in the terminal.
+- Execute `docker build -t mjcrivera/final4 .` in the terminal.
 
 ---
 
@@ -81,8 +81,8 @@ The __Replication Data for Erectile dysfunction and psychosocial outcomes follow
 `final4`
 
   - Docker image is called `final4` to build the container
-  - Link to the image on DockerHub: https://hub.docker.com/repository/docker/mjcrivera/final4/general
-
+  - Link to the image on DockerHub: https://hub.docker.com/r/mjcrivera/final4
+  
 `Final Project.Rproj`
 
   - RStudio project session to run code in
